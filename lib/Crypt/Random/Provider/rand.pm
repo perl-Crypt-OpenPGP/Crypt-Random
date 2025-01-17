@@ -1,11 +1,11 @@
-#!/usr/bin/perl -sw
 ##
 ## Copyright (c) 1998-2018, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
-package Crypt::Random::Provider::rand; 
 use strict;
+use warnings;
+package Crypt::Random::Provider::rand; 
 use Math::Pari qw(pari2num);
 
 #VERSION

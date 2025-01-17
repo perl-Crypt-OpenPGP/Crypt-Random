@@ -1,4 +1,3 @@
-#!/usr/bin/perl -sw
 ##
 ##
 ##
@@ -8,14 +7,14 @@
 ##
 ## $Id: random.t,v 1.3 2001/06/22 03:26:03 vipul Exp $
 
-use lib 'lib';
-use lib '../lib';
+use strict;
+use warnings;
 use Crypt::Random qw(makerandom makerandom_itv);
 
 print "1..1\n";
 
-$r = makerandom ( Size => 512, Verbosity => 1, Strength => 0 );
-$y = makerandom ( Size => 512, Verbosity => 1, Strength => 0 );
+my $r = makerandom ( Size => 512, Verbosity => 1, Strength => 0 );
+my $y = makerandom ( Size => 512, Verbosity => 1, Strength => 0 );
 print "$r, $y\n";
 print $r == $y ? "not ok 1" : "ok 1";
 print "\n";

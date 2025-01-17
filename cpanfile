@@ -9,7 +9,6 @@ requires "Fcntl" => "0";
 requires "IO::Socket" => "0";
 requires "Math::Pari" => "2.001804";
 requires "Statistics::ChiSquare" => "1.0000";
-requires "lib" => "0";
 requires "perl" => "5.008";
 
 on 'test' => sub {

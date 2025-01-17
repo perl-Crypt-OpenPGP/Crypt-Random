@@ -27,8 +27,7 @@ my %WriteMakefileArgs = (
     "Fcntl" => 0,
     "IO::Socket" => 0,
     "Math::Pari" => "2.001804",
-    "Statistics::ChiSquare" => "1.0000",
-    "lib" => 0
+    "Statistics::ChiSquare" => "1.0000"
   },
   "TEST_REQUIRES" => {
     "Statistics::ChiSquare" => "1.0000",
@@ -50,8 +49,7 @@ my %FallbackPrereqs = (
   "IO::Socket" => 0,
   "Math::Pari" => "2.001804",
   "Statistics::ChiSquare" => "1.0000",
-  "Test" => 0,
-  "lib" => 0
+  "Test" => 0
 );
 
 

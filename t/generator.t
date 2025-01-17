@@ -1,4 +1,3 @@
-#!/usr/bin/perl -sw
 ##
 ##
 ##
@@ -19,7 +18,8 @@
 # To enable /dev/random test, bump plan_tests to 15 and add this to the list of tests: 
 #tests( new Crypt::Random::Generator Strength => 1 );
 
-
+use strict;
+use warnings;
 use Test;
 use Crypt::Random::Generator;
 BEGIN { plan tests => 10 };

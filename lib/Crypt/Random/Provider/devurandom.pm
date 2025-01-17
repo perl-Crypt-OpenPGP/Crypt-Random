@@ -1,4 +1,3 @@
-#!/usr/bin/perl -sw
 ##
 ## Copyright (c) 1998-2018, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
@@ -6,9 +5,9 @@
 
 #VERSION
 
-package Crypt::Random::Provider::devurandom; 
 use strict;
-use lib qw(lib);
+use warnings;
+package Crypt::Random::Provider::devurandom; 
 use Crypt::Random::Provider::File;
 use vars qw(@ISA);
 @ISA = qw(Crypt::Random::Provider::File);

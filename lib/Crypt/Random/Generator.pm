@@ -1,9 +1,9 @@
-#!/usr/bin/perl -sw
 ##
 ## Copyright (c) 1998-2018, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
+use warnings;
 package Crypt::Random::Generator; 
 use Crypt::Random qw(makerandom makerandom_itv makerandom_octet);
 use Carp;

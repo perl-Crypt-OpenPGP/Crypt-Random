@@ -1,4 +1,3 @@
-#!/usr/bin/perl -s
 ##
 ## Crypt::Random -- Interface to /dev/random and /dev/urandom.
 ##
@@ -6,6 +5,7 @@
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
+use warnings;
 package Crypt::Random; 
 require Exporter;
 use vars qw($VERSION @EXPORT_OK); 
