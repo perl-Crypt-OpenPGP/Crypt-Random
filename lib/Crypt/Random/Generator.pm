@@ -8,6 +8,8 @@ package Crypt::Random::Generator;
 use Crypt::Random qw(makerandom makerandom_itv makerandom_octet);
 use Carp;
 
+#VERSION
+
 my @PROVIDERS = qw(devrandom devurandom egd rand);
 my %STRENGTH  = ( 0 => [ qw(devurandom egd rand) ], 1 => [ qw(devrandom egd rand) ] );
 

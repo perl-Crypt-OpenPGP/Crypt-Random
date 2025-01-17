@@ -11,6 +11,8 @@ use Crypt::Random::Provider::File;
 use vars qw(@ISA);
 @ISA = qw(Crypt::Random::Provider::File);
 
+#VERSION
+
 sub _defaultsource { return "/dev/random" } 
 
 1;

@@ -8,6 +8,8 @@ package Crypt::Random::Provider::rand;
 use strict;
 use Math::Pari qw(pari2num);
 
+#VERSION
+
 sub new { 
 
     my ($class, %params) = @_;

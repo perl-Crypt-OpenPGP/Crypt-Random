@@ -21,8 +21,7 @@ use Data::Dumper;
 use Class::Loader;
 use Crypt::Random::Generator;
 
-$VERSION     = 1.54;
-
+#VERSION
 
 sub _pickprovider { 
 
@@ -132,11 +131,6 @@ sub makerandom_octet  {
 =head1 NAME
 
 Crypt::Random - Cryptographically Secure, True Random Number Generator. 
-
-=head1 VERSION
-
- $Revision: 1.11 $
- $Date: 2001/07/12 15:59:47 $
 
 =head1 SYNOPSIS
 

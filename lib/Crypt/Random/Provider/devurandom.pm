@@ -4,6 +4,8 @@
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
+#VERSION
+
 package Crypt::Random::Provider::devurandom; 
 use strict;
 use lib qw(lib);

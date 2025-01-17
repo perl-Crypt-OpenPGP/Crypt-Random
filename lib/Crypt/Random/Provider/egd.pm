@@ -11,6 +11,7 @@ use IO::Socket;
 use Carp;
 use Math::Pari qw(pari2num);
 
+#VERSION
 
 sub _defaultsource { 
 
