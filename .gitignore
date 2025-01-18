@@ -1,4 +1,7 @@
 Crypt-Random
 Release*
 MYMETA.*
-/bMakefile/b
+Makefile
+Crypt-Random-*
+blib
+pm_to_blib
