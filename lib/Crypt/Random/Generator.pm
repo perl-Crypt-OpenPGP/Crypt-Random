@@ -11,7 +11,7 @@ use Carp;
 #VERSION
 
 my @PROVIDERS = qw(devrandom devurandom egd rand);
-my %STRENGTH  = ( 0 => [ qw(devurandom egd rand) ], 1 => [ qw(devrandom egd rand) ] );
+my %STRENGTH  = ( 0 => [ qw(egd rand) ], 1 => [ qw(devrandom devurandom) ] );
 
 sub new { 
 
@@ -19,7 +19,7 @@ sub new {
   
     my $self = { _STRENGTH => \%STRENGTH, _PROVIDERS => \@PROVIDERS  };
 
-    $$self{Strength} = $params{Strength} || 0;
+    $$self{Strength} = defined $params{Strength} ? $params{Strength} : 1;
     $$self{Uniform} = $params{Uniform} || 0;
     $$self{Provider} = $params{Provider} || "";  
     $$self{ProviderParams} = $params{ProviderParams} || "";
@@ -37,7 +37,6 @@ sub new {
             }
         } 
     }
-
     croak "No provider available.\n" unless $$self{Provider};
     return $self;
 

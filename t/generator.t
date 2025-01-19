@@ -22,7 +22,7 @@ use strict;
 use warnings;
 use Test;
 use Crypt::Random::Generator;
-BEGIN { plan tests => 10 };
+BEGIN { plan tests => 18 };
 
 tests( Crypt::Random::Generator->new( (Strength => 0) ));
 tests( Crypt::Random::Generator->new ( (Provider => 'rand') ));
@@ -38,4 +38,25 @@ sub tests {
     ok($gen->integer (Size => 128));
     ok(length($gen->string (Length => 30)), 30);
 
+}
+
+provider( Crypt::Random::Generator->new( ), 'devrandom');
+provider( Crypt::Random::Generator->new( (Strength => 0)), 'rand');
+provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'devurandom')), 'devurandom');
+provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'devrandom')), 'devrandom');
+provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'rand')), 'rand');
+
+sub provider {
+    my $gen = shift;
+    my $provider = shift;
+    ok($gen->{Provider}, $provider);
+}
+
+uniform( Crypt::Random::Generator->new( ), 0);
+uniform( Crypt::Random::Generator->new( (Uniform => 0)), 0);
+uniform( Crypt::Random::Generator->new( (Uniform => 1)), 1);
+sub uniform {
+    my $gen = shift;
+    my $uniform = shift;
+    ok($gen->{Uniform}, $uniform);
 }
