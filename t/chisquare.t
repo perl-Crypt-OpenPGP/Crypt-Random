@@ -12,7 +12,7 @@ use Crypt::Random::Generator;
 use Statistics::ChiSquare;
 BEGIN { plan tests => 1 };
 
-tests( new Crypt::Random::Generator Strength => 1, Uniform => 1 );
+tests( Crypt::Random::Generator->new( (Strength => 1, Uniform => 1) ));
 
 sub tests { 
 

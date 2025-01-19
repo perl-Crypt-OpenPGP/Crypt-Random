@@ -16,7 +16,7 @@
 # cat /proc/sys/kernel/random/read_wakeup_threshold
 #
 # To enable /dev/random test, bump plan_tests to 15 and add this to the list of tests: 
-#tests( new Crypt::Random::Generator Strength => 1 );
+#tests( Crypt::Random::Generator->new( (Strength => 1) );
 
 use strict;
 use warnings;
@@ -24,8 +24,8 @@ use Test;
 use Crypt::Random::Generator;
 BEGIN { plan tests => 10 };
 
-tests( new Crypt::Random::Generator Strength => 0 );
-tests( new Crypt::Random::Generator Provider => 'rand' );
+tests( Crypt::Random::Generator->new( (Strength => 0) ));
+tests( Crypt::Random::Generator->new ( (Provider => 'rand') ));
 
 sub tests { 
 

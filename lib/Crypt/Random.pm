@@ -29,7 +29,7 @@ sub _pickprovider {
 
     return $params{Provider} if $params{Provider};
     $params{Strength} ||= 0;
-    my $gen = new Crypt::Random::Generator Strength => $params{Strength};
+    my $gen = Crypt::Random::Generator->new( ( Strength => $params{Strength} ));
     return $gen->{Provider};
 
 }
@@ -43,7 +43,7 @@ sub makerandom {
     local $| = 1;
 
     my $provider = _pickprovider(%params);
-    my $loader = new Class::Loader;
+    my $loader = Class::Loader->new();
     my $po = $loader->_load ( Module => "Crypt::Random::Provider::$provider", 
                               Args => [ map { $_ => $params{$_} }
                                 qw(Strength Provider) ] )
@@ -117,7 +117,7 @@ sub makerandom_octet  {
     $params{Verbosity} = 0 unless $params{Verbosity};
 
     my $provider = _pickprovider(%params); 
-    my $loader = new Class::Loader;
+    my $loader = Class::Loader->new();
     my $po = $loader->_load ( Module => "Crypt::Random::Provider::$provider", 
                               Args => [ %params ] );
     return $po->get_data( %params );
