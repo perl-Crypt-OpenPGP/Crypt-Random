@@ -22,6 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "Class::Loader" => "2.00",
+    "Crypt::URandom" => 0,
     "Data::Dumper" => 0,
     "Exporter" => 0,
     "Fcntl" => 0,
@@ -31,7 +32,8 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Statistics::ChiSquare" => "1.0000",
-    "Test" => 0
+    "Test" => 0,
+    "Test2::V0" => 0
   },
   "VERSION" => "1.55",
   "test" => {
@@ -43,13 +45,15 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "Class::Loader" => "2.00",
+  "Crypt::URandom" => 0,
   "Data::Dumper" => 0,
   "Exporter" => 0,
   "Fcntl" => 0,
   "IO::Socket" => 0,
   "Math::Pari" => "2.001804",
   "Statistics::ChiSquare" => "1.0000",
-  "Test" => 0
+  "Test" => 0,
+  "Test2::V0" => 0
 );
 
 
@@ -61,5 +65,9 @@ unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
   unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+if ( $^O eq 'MSWin32' ) {
+	$WriteMakefileArgs{PREREQ_PM}{'Win32API::File'} = $FallbackPrereqs{'Win32API::File'} = '0.11';
+}
 
 WriteMakefile(%WriteMakefileArgs);

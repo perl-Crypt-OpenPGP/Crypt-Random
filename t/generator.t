@@ -22,7 +22,7 @@ use strict;
 use warnings;
 use Test;
 use Crypt::Random::Generator;
-BEGIN { plan tests => 18 };
+BEGIN { plan tests => 16 };
 
 tests( Crypt::Random::Generator->new( (Strength => 0) ));
 tests( Crypt::Random::Generator->new ( (Provider => 'rand') ));
@@ -40,11 +40,13 @@ sub tests {
 
 }
 
-provider( Crypt::Random::Generator->new( ), 'devrandom');
-provider( Crypt::Random::Generator->new( (Strength => 0)), 'rand');
-provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'devurandom')), 'devurandom');
-provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'devrandom')), 'devrandom');
+if($^O =~ /MSWin32/) {
+    provider( Crypt::Random::Generator->new( (Strength => 0)), 'Win32API');
+} else{
+    provider( Crypt::Random::Generator->new( (Strength => 0)), 'rand');
+}
 provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'rand')), 'rand');
+provider( Crypt::Random::Generator->new( (Strength => 0, Provider=>'Win32API')), 'Win32API');
 
 sub provider {
     my $gen = shift;

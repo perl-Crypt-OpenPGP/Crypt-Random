@@ -3,6 +3,7 @@
 
 requires "Carp" => "0";
 requires "Class::Loader" => "2.00";
+requires "Crypt::URandom" => "0";
 requires "Data::Dumper" => "0";
 requires "Exporter" => "0";
 requires "Fcntl" => "0";
@@ -14,6 +15,7 @@ requires "perl" => "5.008";
 on 'test' => sub {
   requires "Statistics::ChiSquare" => "1.0000";
   requires "Test" => "0";
+  requires "Test2::V0" => "0";
 };
 
 on 'configure' => sub {

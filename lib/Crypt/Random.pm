@@ -146,6 +146,14 @@ a user space entropy gathering daemon, available for systems where
 installed, Crypt::Random can generate random integers of arbitrary size
 of a given bitsize or in a specified interval.
 
+=head1 ALTERNATIVES
+
+Crypt::Random has numerous options for obtaining randomness.  If you would
+prefer a simpler module that provides cryptographic grade randomness
+Crypt::URandom should be considered.
+
+The CPANSec group has developed the L<CPAN Author's Guide to Random Data for Security|https://security.metacpan.org/docs/guides/random-data-for-security.html> that should be reviewed before dealing with randomness. 
+
 =head1 BLOCKING BEHAVIOUR
 
 Since kernel version 5.6 in 2020, /dev/random is no longer blocking and
@@ -191,6 +199,11 @@ Uses /dev/random to generate randomness.
 =item devurandom
 
 Uses /dev/urandom to generate randomness.
+
+=item Win32API
+
+Uses the Windows API SystemFunction036 (RtlGenRandom) to generate
+randomness on Windows Operating Systems.
 
 =item egd (INSECURE)
 

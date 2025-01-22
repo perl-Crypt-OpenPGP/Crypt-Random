@@ -10,8 +10,8 @@ use Carp;
 
 #VERSION
 
-my @PROVIDERS = qw(devrandom devurandom egd rand);
-my %STRENGTH  = ( 0 => [ qw(egd rand) ], 1 => [ qw(devrandom devurandom) ] );
+my @PROVIDERS = qw(devrandom devurandom Win32API egd rand);
+my %STRENGTH  = ( 0 => [ qw(egd Win32API rand) ], 1 => [ qw(devrandom devurandom Win32API rand) ] );
 
 sub new { 
 
