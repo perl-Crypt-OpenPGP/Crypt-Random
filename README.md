@@ -77,15 +77,9 @@ RNG as a device, eg (/dev/intel\_rng).
             As egd has not been updated since 2002 it has been moved to the low
             strength provider list.
 
-        - rand (INSECURE)
+        - rand
 
-            Generates randomness based on Perl's internal rand function.  This
-            provider is not secure for any Cryptographic uses or anywhere the
-            randomness is important for security.
-
-            **DEPRECATION NOTICE**: rand will be completely removed as a provider
-            in a subsequent release.  It does not meet the criteria of being a
-            Cryptographically Secure, True Random Number Generator.
+            Generates randomness based on Perl's Crypt::URandom urandom function.
 
     - **Strength** 0 || 1 
 
@@ -93,7 +87,7 @@ RNG as a device, eg (/dev/intel\_rng).
         for requesting random bits while 0 implies insecure including rand.
 
         As of release 1.55 Strength defaults to 1 (/dev/random or
-        /dev/urandom)
+        /dev/urandom or rand (using Crypt::URandom::urandom))
 
     - **Device** 
 

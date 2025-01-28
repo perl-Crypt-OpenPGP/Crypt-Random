@@ -7,17 +7,17 @@ use strict;
 use warnings;
 package Crypt::Random::Provider::rand; 
 use Math::Pari qw(pari2num);
+use Crypt::URandom qw/urandom/;
 
 #VERSION
 
 sub new { 
 
     my ($class, %params) = @_;
-    my $self = { Source => $params{Source} || sub { return rand($_[0]) } };
+    my $self = { Source => $params{Source} || sub { Crypt::URandom::urandom($_[0]) } };
     return bless $self, $class;
 
 }
-
 
 sub get_data { 
 
@@ -25,21 +25,23 @@ sub get_data {
     $self = {} unless ref $self;
 
     my $size = $params{Size}; 
-    my $skip = $params{Skip} || $$self{Skip};
+    my $skip = $params{Skip} || $$self{Skip} || '';
+    my $q_skip = quotemeta($skip);
 
     if ($size && ref $size eq "Math::Pari") { 
         $size = pari2num($size);
     }
 
     my $bytes = $params{Length} || (int($size / 8) + 1);
-    my $source = $$self{Source} || sub { rand($_[0]) };
+
+    my $source = $$self{Source} || sub { Crypt::URandom::urandom($_[0]) };
     
     my($r, $read, $rt) = ('', 0);
     while ($read < $bytes) {
-        $rt = chr(int(&$source(256)));
-        unless ($skip && $skip =~ /\Q$rt\E/) {
-            $r .= $rt; $read++;
-        }
+        $rt = &$source($bytes - $read);
+        $rt =~ s/[$q_skip]//g if $skip;
+        $r .= $rt; 
+        $read = length $r;
     }
 
     $r;
