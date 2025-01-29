@@ -1,7 +1,7 @@
 ##
 ##
 ##
-## Copyright (c) 2001, Vipul Ved Prakash.  All rights reserved.
+## Copyright (c) 2001-2025, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 

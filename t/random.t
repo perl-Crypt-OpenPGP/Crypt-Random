@@ -1,11 +1,10 @@
 ##
 ##
 ##
-## Copyright (c) 1999, Vipul Ved Prakash.  All rights reserved.
+## Copyright (c) 1999-2025, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 ##
-## $Id: random.t,v 1.3 2001/06/22 03:26:03 vipul Exp $
 
 use strict;
 use warnings;

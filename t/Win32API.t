@@ -5,7 +5,6 @@
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 ##
-## $Id: random.t,v 1.3 2001/06/22 03:26:03 vipul Exp $
 
 use strict;
 use warnings;

@@ -1,9 +1,8 @@
 ##
-## Copyright (c) 2000, Vipul Ved Prakash.  All rights reserved.
+## Copyright (c) 2000-2025, Vipul Ved Prakash.  All rights reserved.
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 ##
-## $Id: makerandom_itv.t,v 1.1.1.1 2001/06/21 15:34:49 vipul Exp $
 
 use strict;
 use warnings;
