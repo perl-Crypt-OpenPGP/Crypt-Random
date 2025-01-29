@@ -1,8 +1,11 @@
-package Crypt::Random::Provider::File; 
 use strict;
+use warnings;
+package Crypt::Random::Provider::File; 
 use Carp;
 use Math::Pari qw(pari2num);
 use Fcntl;
+
+#VERSION
 
 sub _defaultsource { 
     return;

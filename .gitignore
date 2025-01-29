@@ -1,0 +1,7 @@
+Crypt-Random
+Release*
+MYMETA.*
+Makefile
+Crypt-Random-*
+blib
+pm_to_blib
