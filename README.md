@@ -147,6 +147,11 @@ the Linux kernel sources.
 - 2 Handbook of Applied Cryptography by Menezes, Paul C. van Oorschot
 and Scott Vanstone.
 
+# LICENSE
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 # AUTHOR
 
 Vipul Ved Prakash, <mail@vipul.net>

@@ -3,6 +3,7 @@
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
+use strict;
 use warnings;
 package Crypt::Random::Generator; 
 use Crypt::Random qw(makerandom makerandom_itv makerandom_octet);
@@ -22,7 +23,7 @@ sub new {
     $$self{Strength} = defined $params{Strength} ? $params{Strength} : 1;
     $$self{Uniform} = $params{Uniform} || 0;
     $$self{Provider} = $params{Provider} || "";  
-    $$self{ProviderParams} = $params{ProviderParams} || "";
+    $$self{ProviderParams} = $params{ProviderParams} || ();
 
     bless $self, $class;
 

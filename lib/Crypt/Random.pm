@@ -5,6 +5,7 @@
 ## This code is free software; you can redistribute it and/or modify
 ## it under the same terms as Perl itself.
 
+use strict;
 use warnings;
 package Crypt::Random; 
 require Exporter;
@@ -56,6 +57,7 @@ sub makerandom {
 
     my $down     = $size - 1;
 
+    my $y;
     unless ($uniform) { 
 
         # We always set the high bit of the random number if 
@@ -299,6 +301,11 @@ the Linux kernel sources.
 and Scott Vanstone.
 
 =back
+
+=head1 LICENSE
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =head1 AUTHOR
 
