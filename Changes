@@ -2,6 +2,19 @@ Revision history Crypt::Random
 
 {{$NEXT}}
 
+1.56 -- Tue Feb 04 21:47:59 AST 2025
+
+    [Significant updates since 1.54]
+    - New Maintainer
+    - Implement new Win32API provider
+    - Switch rand provider to use Crypt::URandom instead of rand()
+    - A number of packaging and build updates
+
+    [Change Log]
+    - ad803b2 Increment repo version
+    - 82b7643 Fix regex for version creation
+    - e7c687b v1.55
+
 1.55 -- Wed Jan 29 23:41:05 AST 2025
 
     [Significant updates since 1.54]
