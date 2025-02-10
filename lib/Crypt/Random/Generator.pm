@@ -12,7 +12,7 @@ use Carp;
 #VERSION
 
 my @PROVIDERS = qw(devrandom devurandom Win32API egd rand);
-my %STRENGTH  = ( 0 => [ qw(egd Win32API rand) ], 1 => [ qw(devrandom devurandom Win32API rand) ] );
+my %STRENGTH  = ( 0 => [ qw(egd Win32API rand) ], 1 => [ qw(devurandom devrandom Win32API rand) ] );
 
 sub new { 
 
